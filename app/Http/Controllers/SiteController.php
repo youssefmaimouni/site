@@ -24,7 +24,9 @@ class SiteController extends Controller
         $site->lien = $request->lien;
         $site->titre = $request->titre;
         $site->description = $request->description;
-        $site->logo = $request->file('logo')->store('logos', 'public');
+        if($request->file('logo') != null) {
+             $site->logo =  $request->file('logo')->store('logos', 'public');
+            }  
         $site->save();
         return redirect('/')->with('success', 'Site created successfully');
     }
