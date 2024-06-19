@@ -33,10 +33,10 @@
             -webkit-box-orient: vertical;
         }
         </style>
-        <title>LaraGigs | Find Laravel Jobs & Projects</title>
+        <title>Site</title>
     </head>
     <body class="mb-48">
-        <nav class="flex justify-between items-center mb-4 h-16 bg-laravel">
+        <nav class=" sticky top-0 flex justify-between items-center mb-4 h-16 bg-laravel">
             <a href="index.html"
                 ><img class="w-24" src="images/logo.png" alt="" class="logo"
             /></a>
@@ -72,7 +72,7 @@
             <!-- Search -->
 
             <div
-                class="lg:grid lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4  gap-4 space-y-4 md:space-y-0 mx-4"
+                class="lg:grid lg:grid-cols-2 2xl:grid-cols-3 gap-4 space-y-4 md:space-y-0 mx-4"
             >
             <style>
                 .image{
@@ -99,7 +99,7 @@
                             <a target="_blank" href="{{$item->lien}}">{{$item->titre}} </a>
                         </h3>
                         
-                        <div class=" mt-4 text-sm title-text">
+                        <div class=" mt-4 text-sm title-text hidden md:inline-block ">
                             {{$item->description}}
                         </div>
                     </div>
