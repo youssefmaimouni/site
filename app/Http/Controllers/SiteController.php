@@ -15,7 +15,7 @@ class SiteController extends Controller
     public function index()
     {
         return View('welcome', [
-            'site' => DB::table('sites')->simplePaginate(2),
+            'site' => DB::table('sites')->simplePaginate(8),
         ]);
     }
     public function store(SiteRequest $request)
