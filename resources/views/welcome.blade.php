@@ -18,7 +18,7 @@
                 theme: {
                     extend: {
                         colors: {
-                            laravel: "#ef3b2d",
+                            laravel: "#ADD5FF",
                         },
                     },
                 },
@@ -79,7 +79,7 @@
                     </div>
                     <div>
                         <h3 class="text-2xl">
-                            <a href="{{$item->lien}}">{{$item->titre}} </a>
+                            <a target="_blank" href="{{$item->lien}}">{{$item->titre}} </a>
                         </h3>
                         
                         <div class=" mt-4 text-sm title-text">
