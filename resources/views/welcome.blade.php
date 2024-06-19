@@ -27,11 +27,11 @@
         <title>LaraGigs | Find Laravel Jobs & Projects</title>
     </head>
     <body class="mb-48">
-        <nav class="flex justify-between items-center mb-4">
+        <nav class="flex justify-between items-center mb-4 h-16 bg-laravel">
             <a href="index.html"
                 ><img class="w-24" src="images/logo.png" alt="" class="logo"
             /></a>
-            <ul class="flex space-x-6 mr-6 text-lg">
+            <ul class="flex space-x-6 mr-6 text-lg text-white">
                 <li>
                     <a href="/logout"
                         ><i class="fa-solid fa-arrow-right-to-bracket"></i>
