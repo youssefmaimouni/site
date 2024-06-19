@@ -103,9 +103,8 @@
                     </h2>
                 </header>
 
-                <form action="" method="POST" enctype="multipart/form-data">
+                <form action="/site/store" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @method('PUT')
                     <div class="mb-6">
                         <center>
                             <label for="fileToUpload">
