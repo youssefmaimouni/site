@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\SiteRequest;
 use App\Models\Site;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use App\Http\Requests\SiteRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Contracts\View\View;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
 class SiteController extends Controller
 {
     public function index()
     {
-        $site = Site::all();
         return View('welcome', [
-            'site' => $site,
+            'site' => DB::table('sites')->simplePaginate(2),
         ]);
     }
     public function store(SiteRequest $request)
