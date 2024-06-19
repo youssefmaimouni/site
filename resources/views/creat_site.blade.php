@@ -23,7 +23,7 @@
             },
         };
     </script>
-    <title>UniCollab Profile</title>
+    <title>Site</title>
 </head>
 <style>
     
@@ -76,7 +76,7 @@
 </style>
 
 <body class="mb-48 bg-gray-100">
-    <nav class="flex justify-between items-center mb-4 h-16 bg-laravel">
+    <nav class="sticky top-0 flex justify-between items-center mb-4 h-16 bg-laravel">
         <a href="index.html"
             ><img class="w-24" src="images/logo.png" alt="" class="logo"
         /></a>
