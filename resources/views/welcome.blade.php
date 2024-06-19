@@ -80,17 +80,26 @@
             <div
                 class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4"
             >
+            <style>
+                .image{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            </style>
             @foreach ($site as $item)
                 
             <!-- Item 1 -->
             <div class="bg-gray-50 border border-gray-200 rounded p-6">
                 <div class="flex">
-                    <img
-                        class="hidden w-48 mr-6 md:block"
-                        {{-- src="{{$listing->logo ? asset('storage/'.$listing->logo):asset('/images/no-image.png')}}" --}}
-                        src="{{asset("/storage/".$item->logo)}}"
-                        alt=""
-                    />
+                    <div class="grid h-48 aspect-square mr-6 md:block">
+                        <img
+                            class="image"
+                            {{-- src="{{$listing->logo ? asset('storage/'.$listing->logo):asset('/images/no-image.png')}}" --}}
+                            src="{{asset("/storage/".$item->logo)}}"
+                            alt=""
+                        />
+                    </div>
                     <div>
                         <h3 class="text-2xl">
                             <a href="{{$item->lien}}">{{$item->titre}} </a>
@@ -103,6 +112,9 @@
                 </div>
             </div>
             @endforeach
+            <div class="mt-6 p-4 col-span-full">
+                {{$site->links()}}
+            </div>
             </div>
         </main>
     </body>
