@@ -13,7 +13,9 @@ class SiteController extends Controller
 {
     public function index(){
         $site=Site::all();
-        return View('welcome',$site);
+        return View('welcome',[
+            'site'=>$site
+        ]);
     }
     public function store(SiteRequest $request){
         $site = new Site();
