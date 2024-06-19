@@ -33,7 +33,7 @@
             /></a>
             <ul class="flex space-x-6 mr-6 text-lg text-white">
                 <li>
-                    <a href="register.html"
+                    <a href="/register"
                         ><i class="fa-solid fa-user-plus text-white"></i> Register</a
                     >
                 </li>
