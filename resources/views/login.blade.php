@@ -28,9 +28,9 @@
     </head>
     <body class="mb-48">
         <nav class="sticky top-0 flex justify-between items-center mb-4 h-16 bg-laravel">
-            <a href="/"
-                ><img class="w-24" src="images/logo.png" alt="" class="logo"
-            /></a>
+            <a href="/">
+                <p class="text-2xl font-medium text-white ml-4">Polynet</p>
+            </a>
             <ul class="flex space-x-6 mr-6 text-lg text-white">
                 <li>
                     <a href="/register"
