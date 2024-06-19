@@ -69,7 +69,7 @@
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="email"
                             />
-                            @error('password')
+                            @error('email')
                             <p class="text-red-500 text-xs w-80 mt-1">{{$message}} </p>
                             @enderror
                         </div>
