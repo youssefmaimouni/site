@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="images/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -24,14 +24,23 @@
                 },
             };
         </script>
+        <style>
+            .title-text{
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 6; /* number of lines to show */
+            line-clamp: 6; 
+            -webkit-box-orient: vertical;
+        }
+        </style>
         <title>LaraGigs | Find Laravel Jobs & Projects</title>
     </head>
     <body class="mb-48">
-        <nav class="flex justify-between items-center mb-4">
+        <nav class="flex justify-between items-center mb-4 h-16 bg-laravel">
             <a href="index.html"
                 ><img class="w-24" src="images/logo.png" alt="" class="logo"
             /></a>
-            <ul class="flex space-x-6 mr-6 text-lg">
+            <ul class="flex space-x-6 mr-6 text-lg text-white">
                 <li>
                     <a href="/logout"
                         ><i class="fa-solid fa-arrow-right-to-bracket"></i>
@@ -76,7 +85,8 @@
                     <div class="flex">
                         <img
                             class="hidden w-48 mr-6 md:block"
-                            src="images/acme.png"
+                            {{-- src="{{$listing->logo ? asset('storage/'.$listing->logo):asset('/images/no-image.png')}}" --}}
+                            src="{{asset('/image.jfif')}}"
                             alt=""
                         />
                         <div>
@@ -84,210 +94,9 @@
                                 <a href="show.html">Senior Laravel Developer</a>
                             </h3>
                             <div class="text-xl font-bold mb-4">Acme Corp</div>
-                            <ul class="flex">
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    <a href="#">Laravel</a>
-                                </li>
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    <a href="#">API</a>
-                                </li>
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    <a href="#">Backend</a>
-                                </li>
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    <a href="#">Vue</a>
-                                </li>
-                            </ul>
-                            <div class="text-lg mt-4">
-                                <i class="fa-solid fa-location-dot"></i> Boston,
-                                MA
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 2 -->
-                <div class="bg-gray-50 border border-gray-200 rounded p-6">
-                    <div class="flex">
-                        <img
-                            class="hidden w-48 mr-6 md:block"
-                            src="images/stark.png"
-                            alt=""
-                        />
-                        <div>
-                            <h3 class="text-2xl">
-                                <a href="show.html">Full-Stack Engineer</a>
-                            </h3>
-                            <div class="text-xl font-bold mb-4">
-                                Stark Industries
-                            </div>
-                            <ul class="flex">
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    <a href="#">Laravel</a>
-                                </li>
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    <a href="#">API</a>
-                                </li>
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    <a href="#">Backend</a>
-                                </li>
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    <a href="#">Vue</a>
-                                </li>
-                            </ul>
-                            <div class="text-lg mt-4">
-                                <i class="fa-solid fa-location-dot"></i>
-                                Lawrence, MA
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="bg-gray-50 border border-gray-200 rounded p-6">
-                    <div class="flex">
-                        <img
-                            class="hidden w-48 mr-6 md:block"
-                            src="images/wayne.png"
-                            alt=""
-                        />
-                        <div>
-                            <h3 class="text-2xl">
-                                <a href="show.html">Laravel Developer</a>
-                            </h3>
-                            <div class="text-xl font-bold mb-4">
-                                Wayne Enterprises
-                            </div>
-                            <ul class="flex">
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    <a href="#">Laravel</a>
-                                </li>
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    <a href="#">API</a>
-                                </li>
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    <a href="#">Backend</a>
-                                </li>
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    <a href="#">Vue</a>
-                                </li>
-                            </ul>
-                            <div class="text-lg mt-4">
-                                <i class="fa-solid fa-location-dot"></i> Newark,
-                                NJ
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 4 -->
-                <div class="bg-gray-50 border border-gray-200 rounded p-6">
-                    <div class="flex">
-                        <img
-                            class="hidden w-48 mr-6 md:block"
-                            src="images/skynet.png"
-                            alt=""
-                        />
-                        <div>
-                            <h3 class="text-2xl">
-                                <a href="show.html">Backend Laravel Dev</a>
-                            </h3>
-                            <div class="text-xl font-bold mb-4">
-                                Skynet Systems
-                            </div>
-                            <ul class="flex">
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    Laravel
-                                </li>
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    API
-                                </li>
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    Backend
-                                </li>
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    Vue
-                                </li>
-                            </ul>
-                            <div class="text-lg mt-4">
-                                <i class="fa-solid fa-location-dot"></i>
-                                Daytona, FL
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 5 -->
-                <div class="bg-gray-50 border border-gray-200 rounded p-6">
-                    <div class="flex">
-                        <img
-                            class="hidden w-48 mr-6 md:block"
-                            src="images/wonka.png"
-                            alt=""
-                        />
-                        <div>
-                            <h3 class="text-2xl">
-                                <a href="show.html">Junior Developer</a>
-                            </h3>
-                            <div class="text-xl font-bold mb-4">
-                                Wonka Industries
-                            </div>
-                            <ul class="flex">
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    <a href="#">Laravel</a>
-                                </li>
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    <a href="#">API</a>
-                                </li>
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    <a href="#">Backend</a>
-                                </li>
-                                <li
-                                    class="flex items-center justify-center bg-black text-white rounded-xl py-1 px-3 mr-2 text-xs"
-                                >
-                                    <a href="#">Vue</a>
-                                </li>
-                            </ul>
-                            <div class="text-lg mt-4">
-                                <i class="fa-solid fa-location-dot"></i> San
-                                Francisco, CA
+                            
+                            <div class=" mt-4 text-sm title-text">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                             </div>
                         </div>
                     </div>

@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [SiteController::class,'index'])->name('index')->middleware('auth');
 
+Route::get('/creat', function () {
+    return view('creat_site');
+})->middleware('auth');
+
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/authentification', [LoginController::class, 'authentification'])->name('authentification');
 
