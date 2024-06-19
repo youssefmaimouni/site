@@ -11,7 +11,7 @@ class Site extends Model
     protected $fillable =[
         'lien',
         'logo',
-        'Titre',
+        'titre',
         'description'
     ];
 }

@@ -103,9 +103,8 @@
                     </h2>
                 </header>
 
-                <form action="" method="POST" enctype="multipart/form-data">
+                <form action="/site/store" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @method('PUT')
                     <div class="mb-6">
                         <center>
                             <label for="fileToUpload">
@@ -116,12 +115,12 @@
                             </label>
                         </center>
                     </div>
-                    <input type="File" name="fileToUpload" accept="image/png, image/gif, image/jpeg" id="fileToUpload">
+                    <input type="File" name="logo" accept="image/png, image/gif, image/jpeg" id="fileToUpload">
                     <div class="mb-6">
                         <label for="title" class="inline-block text-lg mb-2">Website Title </label>
-                        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="title"
+                        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="titre"
                             placeholder="title"  />
-                        @error('title')
+                        @error('titre')
                             <p class="text-red-500 test-xs mt-1">{{$message}}</p>
                         @enderror                    
                     </div>

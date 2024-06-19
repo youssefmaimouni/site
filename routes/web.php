@@ -19,6 +19,6 @@ Route::post('/store',[UserController::class ,'store'])->name('store');
 
 Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 
-Route::get('/create',[UserController::class ,'create'])->name('create'); 
-Route::post('/site/store',[UserController::class ,'store'])->name('site.store'); 
+Route::get('/create',[SiteController::class ,'site_create'])->name('create'); 
+Route::post('/site/store',[SiteController::class ,'store'])->name('site.store'); 
 
