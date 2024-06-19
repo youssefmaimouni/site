@@ -8,6 +8,8 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware('auth')->name('index');
 
-Route::get('/login', [LoginController::class,'authentication'])->name('login');
+Route::get('/login', [LoginController::class,'login'])->name('login');
+Route::post('/authentification', [LoginController::class,'authentification'])->name('authentification');
 
-Route::get('/register',[UserController::class ,'store'])->name('register');
+Route::get('/register',[UserController::class ,'register'])->name('register'); 
+Route::post('/store',[UserController::class ,'store'])->name('store'); 

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Requests;
-
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 
 class LoginRequest extends FormRequest
@@ -22,8 +22,11 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'mail'=>'required |email:filter',
-            'password'=>'required '
+            'email'=>'required |email:filter',
+            'password'=>'required| min:6|confirmed'
         ];
+    }
+    public function failedValidation(Validator $validator){
+        return redirect()->route('register')->withErrors($validator)->withInput();
     }
 }

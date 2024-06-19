@@ -30,6 +30,6 @@ class UserRequest extends FormRequest
     }
 
     public function failedValidation(Validator $validator){
-        return redirect()->back()->withErrors($validator)->withInput();
+        return redirect()->route('register')->withErrors($validator)->withInput();
     }
 }
