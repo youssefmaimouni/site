@@ -49,7 +49,7 @@
                 </li>
             </ul>
         </nav>
-
+        {{-- @dd($site) --}}
         <!-- Hero -->
         <main>
             <!-- Search -->
@@ -80,28 +80,31 @@
             <div
                 class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4"
             >
-                <!-- Item 1 -->
-                <div class="bg-gray-50 border border-gray-200 rounded p-6">
-                    <div class="flex">
-                        <img
-                            class="hidden w-48 mr-6 md:block"
-                            {{-- src="{{$listing->logo ? asset('storage/'.$listing->logo):asset('/images/no-image.png')}}" --}}
-                            src="{{asset('/image.jfif')}}"
-                            alt=""
-                        />
-                        <div>
-                            <h3 class="text-2xl">
-                                <a href="show.html">Senior Laravel Developer</a>
-                            </h3>
-                            <div class="text-xl font-bold mb-4">Acme Corp</div>
-                            
-                            <div class=" mt-4 text-sm title-text">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </div>
+            @foreach ($site as $item)
+                
+            <!-- Item 1 -->
+            <div class="bg-gray-50 border border-gray-200 rounded p-6">
+                <div class="flex">
+                    <img
+                        class="hidden w-48 mr-6 md:block"
+                        {{-- src="{{$listing->logo ? asset('storage/'.$listing->logo):asset('/images/no-image.png')}}" --}}
+                        src="{{asset("/storage/".$item->logo)}}"
+                        alt=""
+                    />
+                    <div>
+                        <h3 class="text-2xl">
+                            <a href="{{$item->lien}}">{{$item->titre}} </a>
+                        </h3>
+                        
+                        <div class=" mt-4 text-sm title-text">
+                            {{$item->description}}
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
+            </div>
         </main>
     </body>
-</html>
+    </html>
+    
