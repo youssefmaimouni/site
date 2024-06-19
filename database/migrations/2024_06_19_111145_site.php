@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('sites', function (Blueprint $table) {
             $table->id();
             $table->string('lien');
-            $table->string('logo')->nullable();
+            $table->string('logo')->default('logos/logo.jpg');
             $table->string('titre');
             $table->longText('description');
             $table->timestamps();

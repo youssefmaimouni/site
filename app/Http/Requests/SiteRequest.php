@@ -23,8 +23,7 @@ class SiteRequest extends FormRequest
     {
         return [
             'description'=>'required |string',
-            'Titre'=>'required|string',
-            'logo'=>'required| string',
+            'titre'=>'required|string',
             'lien'=>'required| string',
 
         ];
@@ -37,8 +36,8 @@ class SiteRequest extends FormRequest
         return[
             'description.required '=>'description non fourni',
             'description.string'=>"le description  doit être un string",
-            'Titre.required '=>'Titre non fourni',
-            'Titre.string'=>"le Titre  doit être un string",
+            'titre.required '=>'Titre non fourni',
+            'titre.string'=>"le Titre  doit être un string",
             'logo.required '=>'logo non fourni',
             'logo.string'=>"le logo  doit être un string",
             'lien.required '=>'lien non fourni',
