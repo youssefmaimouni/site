@@ -37,9 +37,9 @@
     </head>
     <body class="mb-48">
         <nav class=" sticky top-0 flex justify-between items-center mb-4 h-16 bg-laravel">
-            <a href="index.html"
-                ><img class="w-24" src="images/logo.png" alt="" class="logo"
-            /></a>
+            <a href="/">
+                <p class="text-2xl font-medium text-white ml-4">Polynet</p>
+            </a>
             <ul class="flex space-x-6 mr-6 text-lg items-center text-white">
                 <li>
                     <a href="/logout"
@@ -85,8 +85,8 @@
                 
             <!-- Item 1 -->
             <div class="bg-gray-50 border border-gray-200 rounded p-6">
-                <div class="flex">
-                    <div class="grid h-48 aspect-square mr-6 md:block">
+                <div class="grid md:flex">
+                    <div class="grid h-full md:h-48 aspect-square mr-6 md:block">
                         <img
                             class="image"
                             {{-- src="{{$listing->logo ? asset('storage/'.$listing->logo):asset('/images/no-image.png')}}" --}}
