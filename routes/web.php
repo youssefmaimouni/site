@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [SiteController::class, 'index'])->name('index');
 Route::get('/site', [SiteController::class, 'site'])->name('site');
-Route::get('/application', [SiteController::class, 'application'])->name('application');
+Route::get('/application', [SiteController::class, 'app'])->name('application');
 Route::get('/autre', [SiteController::class, 'autre'])->name('autre');
 
 Route::get('/creat', function () {
