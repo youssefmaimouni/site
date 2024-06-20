@@ -73,7 +73,7 @@
             </ul>
         </nav>
             
-        <div id="sidebar" class='flex flex-col items-start pl-4 justify-start w-64 fixed left-0 h-full hidden bg-gray-100'>
+        <div id="sidebar" class=' flex-col items-start pl-4 justify-start w-64 fixed left-0 h-full hidden bg-gray-100'>
             <a href="/register" class="flex text-laravel font-medium text-lg mt-6">
                         <?xml version="1.0" encoding="iso-8859-1"?>
                         <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
@@ -148,7 +148,10 @@
                     </div>
                     <div class="">
                         <h3 class="text-2xl">
-                            <a target="_blank" href="{{$item->lien}}">{{$item->titre}} </a>
+                            <abbr title="{{$item->lien}}" class="no-underline">
+                                <a target="_blank" href="{{$item->lien}}">{{$item->titre}} </a>
+
+                            </abbr>
                         </h3>
                         
                         <div class="max-h-36 overflow-hidden mt-4 text-sm title-text hidden md:inline-block ">
@@ -168,6 +171,7 @@
         document.getElementById('toggleButton').addEventListener('click', function() {
             var sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('hidden'); 
+            sidebar.classList.remove('flex'); 
             var main = document.getElementById('item');
             main.classList.remove('ml-64'); 
             i++;
@@ -176,6 +180,7 @@
         document.getElementById('showButton').addEventListener('click', function() {
             var sidebar = document.getElementById('sidebar');
             sidebar.classList.remove('hidden'); 
+            sidebar.classList.toggle('flex'); 
             var main = document.getElementById('item');
             if(screen.width>480){
                 main.classList.toggle('ml-64'); 
