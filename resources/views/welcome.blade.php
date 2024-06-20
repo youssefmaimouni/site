@@ -177,7 +177,7 @@
             var sidebar = document.getElementById('sidebar');
             sidebar.classList.remove('hidden'); 
             var main = document.getElementById('item');
-            if(screen.width>430){
+            if(screen.width>480){
                 main.classList.toggle('ml-64'); 
             }
             i++;

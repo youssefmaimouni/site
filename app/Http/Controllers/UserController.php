@@ -26,7 +26,10 @@ class UserController extends Controller
      }
      function register()
      {
-          return View('register');
+          dd(auth()->user()->role == 's'); {
+               return View('register');
+          }
+          return abort(403);
      }
      function update(UserRequest $request, User $user)
      {
