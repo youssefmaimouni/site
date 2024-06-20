@@ -15,7 +15,7 @@ class SiteController extends Controller
     public function index()
     {
         return View('welcome', [
-            'site' => DB::table('sites')->simplePaginate(8),
+            'site' => DB::table('sites')->paginate(8),
         ]);
     }
     public function store(SiteRequest $request)
@@ -24,9 +24,9 @@ class SiteController extends Controller
         $site->lien = $request->lien;
         $site->titre = $request->titre;
         $site->description = $request->description;
-        if($request->file('logo') != null) {
-             $site->logo =  $request->file('logo')->store('logos', 'public');
-            }  
+        if ($request->file('logo') != null) {
+            $site->logo =  $request->file('logo')->store('logos', 'public');
+        }
         $site->save();
         return redirect('/')->with('success', 'Site created successfully');
     }

@@ -5,13 +5,13 @@ use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [SiteController::class, 'index'])->name('index')->middleware('auth');
+Route::get('/', [SiteController::class, 'index'])->name('index');
 
 Route::get('/creat', function () {
     return view('creat_site');
 })->middleware('auth');
 
-Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/admin', [LoginController::class, 'login'])->name('login');
 Route::post('/authentification', [LoginController::class, 'authentification'])->name('authentification');
 
 Route::get('/register', [UserController::class, 'register'])->name('register')->middleware('auth');
