@@ -14,7 +14,7 @@ Route::get('/creat', function () {
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/authentification', [LoginController::class, 'authentification'])->name('authentification');
 
-Route::get('/register', [UserController::class, 'register'])->name('register');
+Route::get('/register', [UserController::class, 'register'])->name('register')->middleware('auth');
 Route::post('/store', [UserController::class, 'store'])->name('store');
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
