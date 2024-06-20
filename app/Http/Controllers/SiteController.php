@@ -21,7 +21,7 @@ class SiteController extends Controller
     public function site()
     {
         $sites = DB::table('sites')
-               ->where('category','=' ,'site')
+               ->where('categorier','=' ,'site')
                ->paginate(8);
 
         return view('welcome', ['site' => $sites]);
@@ -29,7 +29,7 @@ class SiteController extends Controller
     public function app()
     {
         $sites = DB::table('sites')
-               ->where('category','=' ,'application')
+               ->where('categorier','=' ,'application')
                ->paginate(8);
 
         return view('welcome', ['site' => $sites]);
@@ -37,7 +37,7 @@ class SiteController extends Controller
     public function autre()
     {
         $sites = DB::table('sites')
-               ->where('category','=' ,'autre')
+               ->where('categorier','=' ,'autre')
                ->paginate(8);
 
         return view('welcome', ['site' => $sites]);
