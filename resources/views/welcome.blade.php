@@ -24,7 +24,7 @@
                     },
                 },
             };
-            let i=1;
+            let i=0;
         </script>
         <style>
             .title-text{
@@ -40,10 +40,10 @@
     <body class="mb-36 h-full">
         <nav class=" sticky top-0 flex justify-between items-center h-16 bg-laravel">
             <div class="flex">
-                <button id="toggleButton" class="ml-2" style="display:none">       
+                <button id="toggleButton" class="ml-2" style="display:block">       
                     <?xml version="1.0" encoding="iso-8859-1"?>
                     <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-                    <svg fill="#FFF" height="15px" width="15px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    <svg fill="#FFF" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                         viewBox="0 0 460.775 460.775" xml:space="preserve">
                     <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
                         c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
@@ -53,9 +53,9 @@
                         c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
                     </svg>
                 </button>
-                <button id="showButton" style="display:block" class="ml-2">
+                <button id="showButton" style="display:none" class="ml-2">
                     <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-                    <svg width="15px" height="15px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
+                    <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
                     <path fill="#FFF" fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"/>
                     </svg>
                 </button>
@@ -83,7 +83,7 @@
             </ul>
         </nav>
         
-        <div id="sidebar" class=' flex-col items-start pl-4 justify-start w-64 fixed left-0 h-full hidden bg-gray-100'>
+        <div id="sidebar" class=' flex-col items-start pl-4 justify-start w-64 fixed left-0 h-full flex bg-gray-100'>
             @auth
             @if (auth()->user()->role=='S')
             
@@ -166,7 +166,7 @@
         
         {{-- @dd($site) --}}
         <!-- Hero -->
-        <main id="item" class="">
+        <main id="item" class="ml-64">
             <!-- Search -->
 
             <div

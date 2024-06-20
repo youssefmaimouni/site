@@ -99,7 +99,7 @@
             <div class="bg-gray-50 border border-gray-200 shadow-md p-10 rounded max-w-lg mx-auto mt-24">
                 <header class="text-center">
                     <h2 class="text-3xl font-bold uppercase mb-1">
-                        Edit Group
+                        Ajouter Site
                     </h2>
                 </header>
 
@@ -130,6 +130,17 @@
                         <input type="url" class="border border-gray-200 rounded p-2 w-full" name="lien"
                             placeholder="Lien"  />
                         @error('lien')
+                            <p class="text-red-500 test-xs mt-1">{{$message}}</p>
+                        @enderror                    
+                    </div>
+                    <div class="mb-6">
+                        <label for="categorier" class="inline-block text-lg mb-2">Categorier </label>
+                        <select name="categorier" class="border border-gray-200 rounded p-2 w-full" id="categorier">
+                            <option value="site">site</option>
+                            <option value="application">application</option>
+                            <option value="autre">autre</option>
+                          </select>
+                        @error('categorier')
                             <p class="text-red-500 test-xs mt-1">{{$message}}</p>
                         @enderror                    
                     </div>
