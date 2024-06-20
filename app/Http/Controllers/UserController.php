@@ -18,7 +18,7 @@ class UserController extends Controller
                'name' => ['required', 'min:3'],
                'email' => ['required', 'email', Rule::unique('users', 'email')],
                'password' => 'required|confirmed|min:6',
-               'role' =>['required',Rule::in(['A','S'])]
+               'role' => ['required', Rule::in(['A', 'S'])]
           ]);
           //hash password
           $formFields['password'] = bcrypt(($formFields['password']));
@@ -28,10 +28,10 @@ class UserController extends Controller
      }
      function register()
      {
-          dd(auth()->user()->role == 'S'); {
+          if (auth()->user()->role == 'S') {
                return View('register');
           }
-          return abort(403);
+          return abort(403, 'you are not a super admin');
      }
      function update(UserRequest $request, User $user)
      {

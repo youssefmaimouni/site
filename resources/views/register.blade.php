@@ -87,18 +87,24 @@
                             <p class="text-red-500 text-xs w-80 mt-1">{{$message}} </p>
                         @enderror
                     </div>
+                    <div class="mb-6">
+                        <div class="flex w-full m-auto items-center">
+                            <p class="w-full inline-block text-lg">Role:</p>
+                            <div class="w-full">
+                                <label for="A">Admin</label>
+                                <input type="radio" id='A' class="border border-gray-200 rounded p-2" name="role" value="A" />
+                            </div>
+                            <div class="w-full">
+                                <label for="S">Super Admin</label>
+                                <input type="radio" id='S' class="border border-gray-200 rounded p-2" name="role" value="S" />
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="mb-6">
                         <button type="submit" class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
                             Sign Up
                         </button>
-                    </div>
-
-                    <div class="mt-8">
-                        <p>
-                            Already have an account?
-                            <a href="/login" class="text-laravel">Login</a>
-                        </p>
                     </div>
                 </form>
             </div>

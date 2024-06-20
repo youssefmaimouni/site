@@ -32,12 +32,7 @@
                 <p class="text-2xl font-medium text-white ml-4">Polynet</p>
             </a>
             <ul class="flex space-x-6 mr-6 text-lg text-white">
-                <li>
-                    <a href="/login"
-                        ><i class="fa-solid fa-arrow-right-to-bracket"></i>
-                        Login</a
-                    >
-                </li>
+                
             </ul>
         </nav>
 
