@@ -74,11 +74,11 @@
             </ul>
         </nav>
             
-        <div  class=' flex flex-col items-center justify-start w-64 fixed left-0 h-full bg-laravel'>
+        <div  class=' flex flex-col items-center justify-start w-64 fixed left-0 h-full bg-gray-100 shadow-md'>
                     <a href="/register" class="m-6">
                         <?xml version="1.0" encoding="iso-8859-1"?>
                         <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-                        <svg fill="#FFF" height="30px" width="30px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                        <svg fill="#546F8A" height="30px" width="30px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                             viewBox="0 0 328 328" xml:space="preserve">
                         <g id="XMLID_455_">
                             <path id="XMLID_458_" d="M15,286.75h125.596c19.246,24.348,49.031,40,82.404,40c57.897,0,105-47.103,105-105s-47.103-105-105-105
@@ -95,7 +95,7 @@
                     <a href="/creat"
                         >
                         <abbr title="ajouter site">
-                            <svg fill="#FFF" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            <svg fill="#546F8A" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                                 viewBox="0 0 27.963 27.963" xml:space="preserve">
                             <g>
                                 <g id="c140__x2B_">
@@ -116,7 +116,7 @@
             <!-- Search -->
 
             <div
-                class="lg:grid lg:grid-cols-2 2xl:grid-cols-3 gap-4 space-y-4 md:space-y-0 mx-4"
+                class="lg:grid lg:grid-cols-2 2xl:grid-cols-3 gap-4 space-y-4 md:space-y-0 mx-4 mt-8"
             >
             <style>
                 .image{
@@ -128,7 +128,7 @@
             @foreach ($site as $item)
                 
             <!-- Item 1 -->
-            <div class="bg-gray-50 border border-gray-200 rounded p-6">
+            <div class="bg-gray-50 border border-gray-200 rounded p-6 shadow-md">
                 <div class="grid md:flex">
                     <div class="grid h-full md:h-48 aspect-square mr-6 md:block">
                         <img
@@ -143,7 +143,7 @@
                             <a target="_blank" href="{{$item->lien}}">{{$item->titre}} </a>
                         </h3>
                         
-                        <div class=" mt-4 text-sm title-text hidden md:inline-block ">
+                        <div class=" mt-4 text-sm title-text hidden md:inline-block  ">
                             {{$item->description}}
                         </div>
                     </div>
