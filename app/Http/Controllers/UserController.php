@@ -26,10 +26,10 @@ class UserController extends Controller
      }
      function register()
      {
-          dd(auth()->user()->role == 's'); {
+          if (auth()->user()->role == 'S') {
                return View('register');
           }
-          return abort(403);
+          return abort(403, 'you are not a super admin');
      }
      function update(UserRequest $request, User $user)
      {
