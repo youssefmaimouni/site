@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UserRequest extends FormRequest
 {
@@ -26,6 +27,7 @@ class UserRequest extends FormRequest
             'name'=>'required|string',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|confirmed|min:6',
+            'role' =>['required',Rule::in(['A','S'])]
         ];
     }
 
