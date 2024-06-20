@@ -46,7 +46,7 @@
                     <h2 class="text-2xl font-bold uppercase mb-1">
                         Register
                     </h2>
-                    <p class="mb-4">Create an account to post gigs</p>
+                    <p class="mb-4">Create an account</p>
                 </header>
 
                 <form action="/store" method="POST">
@@ -85,7 +85,8 @@
                             name="password_confirmation" />
                         @error('password_confirmation')
                             <p class="text-red-500 text-xs w-80 mt-1">{{$message}} </p>
-                        @enderror
+                        @enderror 
+
                     </div>
                     <div class="mb-6">
                         <div class="flex w-full m-auto items-center">
@@ -99,6 +100,9 @@
                                 <input type="radio" id='S' class="border border-gray-200 rounded p-2" name="role" value="S" />
                             </div>
                         </div>
+                        @error('role')
+                            <p class="text-red-500 text-xs w-80 mt-1">{{$message}} </p>
+                        @enderror 
                     </div>
 
                     <div class="mb-6">
