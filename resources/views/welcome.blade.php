@@ -29,14 +29,14 @@
             .title-text{
             overflow: hidden;
             display: -webkit-box;
-            -webkit-line-clamp: 6; /* number of lines to show */
-            line-clamp: 6; 
+            -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2; 
             -webkit-box-orient: vertical;
         }
         </style>
         <title>Site</title>
     </head>
-    <body class="mb-48 h-full">
+    <body class="mb-36 h-full">
         <nav class=" sticky top-0 flex justify-between items-center h-16 bg-laravel">
             <a href="/">
                 <p class="text-2xl font-medium text-white ml-4">Polynet</p>
@@ -122,7 +122,7 @@
             <!-- Search -->
 
             <div
-                class="lg:grid lg:grid-cols-2 2xl:grid-cols-3 gap-4 space-y-4 md:space-y-0 mx-4 mt-4"
+                class="lg:grid xl:grid-cols-2 2xl:grid-cols-3 gap-4 space-y-4 md:space-y-0 mx-4 mt-4"
             >
             <style>
                 .image{
@@ -144,12 +144,12 @@
                             alt=""
                         />
                     </div>
-                    <div>
+                    <div class="">
                         <h3 class="text-2xl">
                             <a target="_blank" href="{{$item->lien}}">{{$item->titre}} </a>
                         </h3>
                         
-                        <div class=" mt-4 text-sm title-text hidden md:inline-block ">
+                        <div class="max-h-36 overflow-hidden mt-4 text-sm title-text hidden md:inline-block ">
                             {{$item->description}}
                         </div>
                     </div>
