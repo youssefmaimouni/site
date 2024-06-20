@@ -19,6 +19,7 @@
                     extend: {
                         colors: {
                             laravel: "#1967D2",
+                            laravel2: "#254e86",
                         },
                     },
                 },
@@ -74,11 +75,11 @@
             </ul>
         </nav>
             
-        <div  class=' flex flex-col items-center justify-start w-64 fixed left-0 h-full bg-laravel'>
-                    <a href="/register" class="m-6">
+        <div  class=' flex flex-col items-start pl-4 justify-start w-64 fixed left-0 h-full bg-gray-100'>
+                    <a href="/register" class="flex text-laravel font-medium text-lg mt-6">
                         <?xml version="1.0" encoding="iso-8859-1"?>
                         <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-                        <svg fill="#FFF" height="30px" width="30px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                        <svg fill="#1967D2" height="30px" width="30px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                             viewBox="0 0 328 328" xml:space="preserve">
                         <g id="XMLID_455_">
                             <path id="XMLID_458_" d="M15,286.75h125.596c19.246,24.348,49.031,40,82.404,40c57.897,0,105-47.103,105-105s-47.103-105-105-105
@@ -91,11 +92,13 @@
                                 h-15v-15c0-8.284-6.716-15-15-15s-15,6.716-15,15v15h-15c-8.284,0-15,6.716-15,15S184.716,236.75,193,236.75z"/>
                         </g>
                         </svg>
+                        <p class="ml-4">
+                            Register
+                        </p>
                     </a>
-                    <a href="/creat"
-                        >
+                    <a href="/creat" class="flex text-laravel font-medium text-lg mt-6">
                         <abbr title="ajouter site">
-                            <svg fill="#FFF" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            <svg fill="#1967D2" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                                 viewBox="0 0 27.963 27.963" xml:space="preserve">
                             <g>
                                 <g id="c140__x2B_">
@@ -108,6 +111,9 @@
                             </g>
                         </svg>
                     </abbr>
+                    <p class="ml-4">
+                        Add Site
+                    </p>
                 </a>
         </div>
         {{-- @dd($site) --}}
@@ -116,7 +122,7 @@
             <!-- Search -->
 
             <div
-                class="lg:grid lg:grid-cols-2 2xl:grid-cols-3 gap-4 space-y-4 md:space-y-0 mx-4"
+                class="lg:grid lg:grid-cols-2 2xl:grid-cols-3 gap-4 space-y-4 md:space-y-0 mx-4 mt-4"
             >
             <style>
                 .image{
@@ -128,7 +134,7 @@
             @foreach ($site as $item)
                 
             <!-- Item 1 -->
-            <div class="bg-gray-50 border border-gray-200 rounded p-6">
+            <div class="bg-gray-50 border border-gray-200 rounded p-6 shadow-md">
                 <div class="grid md:flex">
                     <div class="grid h-full md:h-48 aspect-square mr-6 md:block">
                         <img
