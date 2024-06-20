@@ -148,7 +148,10 @@
                     </div>
                     <div class="">
                         <h3 class="text-2xl">
-                            <a target="_blank" href="{{$item->lien}}">{{$item->titre}} </a>
+                            <abbr title="{{$item->lien}}" class="no-underline">
+                                <a target="_blank" href="{{$item->lien}}">{{$item->titre}} </a>
+
+                            </abbr>
                         </h3>
                         
                         <div class="max-h-36 overflow-hidden mt-4 text-sm title-text hidden md:inline-block ">
@@ -179,7 +182,7 @@
             sidebar.classList.remove('hidden'); 
             sidebar.classList.toggle('flex'); 
             var main = document.getElementById('item');
-            if(screen.width>430){
+            if(screen.width>480){
                 main.classList.toggle('ml-64'); 
             }
             i++;
