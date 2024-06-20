@@ -12,6 +12,7 @@ class Site extends Model
         'lien',
         'logo',
         'titre',
+        'categorier',
         'description'
     ];
 }

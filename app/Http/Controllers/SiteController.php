@@ -18,11 +18,36 @@ class SiteController extends Controller
             'site' => DB::table('sites')->paginate(8),
         ]);
     }
+    public function site()
+    {
+        $sites = DB::table('sites')
+               ->where('category','=' ,'site')
+               ->paginate(8);
+
+        return view('welcome', ['site' => $sites]);
+    }
+    public function app()
+    {
+        $sites = DB::table('sites')
+               ->where('category','=' ,'application')
+               ->paginate(8);
+
+        return view('welcome', ['site' => $sites]);
+    }
+    public function autre()
+    {
+        $sites = DB::table('sites')
+               ->where('category','=' ,'autre')
+               ->paginate(8);
+
+        return view('welcome', ['site' => $sites]);
+    }
     public function store(SiteRequest $request)
     {
         $site = new Site();
         $site->lien = $request->lien;
         $site->titre = $request->titre;
+        $site->categorier = $request->categorier;
         $site->description = $request->description;
         if ($request->file('logo') != null) {
             $site->logo =  $request->file('logo')->store('logos', 'public');

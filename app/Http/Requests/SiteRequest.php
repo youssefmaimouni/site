@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class SiteRequest extends FormRequest
 {
@@ -25,6 +26,7 @@ class SiteRequest extends FormRequest
             'description'=>'required |string',
             'titre'=>'required|string',
             'lien'=>'required| string',
+            'categorier'=>['required', Rule::in(['site', 'application', 'autre'])]
 
         ];
     }

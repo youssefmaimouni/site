@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('lien');
             $table->string('logo')->default('logos/logo.jpg');
             $table->string('titre');
+            $table->string('categorier');
             $table->longText('description');
             $table->timestamps();
         });

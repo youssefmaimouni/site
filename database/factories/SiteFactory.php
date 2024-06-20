@@ -25,6 +25,7 @@ class SiteFactory extends Factory
             'lien' => $this->faker->url,
             'logo' => 'logos/' . $fileName,
             'titre' => $this->faker->sentence,
+            'categorier'=>$this->faker->randomElement(['site', 'application', 'autre']),
             'description' => $this->faker->paragraph,
         ];
     }
