@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Whoops\Run;
 
 class UserController extends Controller
 {
@@ -16,7 +17,8 @@ class UserController extends Controller
           $formFields = $request->validate([
                'name' => ['required', 'min:3'],
                'email' => ['required', 'email', Rule::unique('users', 'email')],
-               'password' => 'required|confirmed|min:6'
+               'password' => 'required|confirmed|min:6',
+               'role' => ['required', Rule::in(['A', 'S'])]
           ]);
           //hash password
           $formFields['password'] = bcrypt(($formFields['password']));
