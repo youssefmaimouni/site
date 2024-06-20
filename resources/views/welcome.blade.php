@@ -201,26 +201,16 @@
                             <div class="w-full">                            
                                 {{$item->titre}}
                             </div>
-                            <div class="w-12">
-                                <abbr title="{{$item->lien}}" class="no-underline">
-                                    <a href="{{$item->lien}}" target="_blank">
-                                        <?xml version="1.0" encoding="iso-8859-1"?>
-                                        <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-                                        <svg fill="#000000" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                                            viewBox="0 0 491.1 491.1" xml:space="preserve">
-                                        <g>
-                                            <path d="M379.25,282.85l-192.8,192.8c-20.6,20.6-54,20.6-74.6,0s-20.6-54,0-74.6l155.5-155.5l-155.5-155.5
-                                                c-20.6-20.6-20.6-54,0-74.6s54-20.6,74.6,0l192.8,192.8C399.85,228.85,399.85,262.25,379.25,282.85z"/>
-                                        </g>
-                                        </svg>
-                                    </a>
-                                </abbr>
-                            </div>
                         </h3>
                         
                         <div class="max-h-11 overflow-hidden max-w-full whatever mt-4 text-sm title-text hidden md:inline-block ">
                             {{$item->description}}
                         </div>
+                        <abbr title="{{$item->lien}}" class="no-underline">
+                            <a href="{{$item->lien}}" target="_blank">
+                               <p class="p-2 w-fit rounded-md bg-laravel text-white">visiter {{$item->categorier}}</p>
+                            </a>
+                        </abbr>
                     </div>
                 </div>
             </div>
