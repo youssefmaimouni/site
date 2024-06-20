@@ -24,6 +24,7 @@
                     },
                 },
             };
+            let i=0;
         </script>
         <style>
             .title-text{
@@ -38,6 +39,23 @@
     </head>
     <body class="mb-48 h-full">
         <nav class=" sticky top-0 flex justify-between items-center h-16 bg-laravel">
+            
+            <button id="toggleButton">Toggle Sidebar</button>
+            <button id="showButton" style="display:none">hide Sidebar</button>
+            <script>
+                function name() {
+                    
+                    if (i % 2 === 0) {
+                        document.getElementById('toggleButton').style.display = 'block'; // Show toggleButton
+                        document.getElementById('showButton').style.display = 'none';     // Hide showButton
+                        
+                    } else {
+                        document.getElementById('toggleButton').style.display = 'none';   // Hide toggleButton
+                        document.getElementById('showButton').style.display = 'block';    // Show showButton
+                        
+                    }
+                }
+            </script>
             <a href="/">
                 <p class="text-2xl font-medium text-white ml-4">Polynet</p>
             </a>
@@ -75,8 +93,8 @@
             </ul>
         </nav>
             
-        <div  class=' flex flex-col items-start pl-4 justify-start w-64 fixed left-0 h-full bg-gray-100'>
-                    <a href="/register" class="flex text-laravel font-medium text-lg mt-6">
+        <div id="sidebar" class='flex flex-col items-start pl-4 justify-start w-64 fixed left-0 h-full bg-gray-100'>
+            <a href="/register" class="flex text-laravel font-medium text-lg mt-6">
                         <?xml version="1.0" encoding="iso-8859-1"?>
                         <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
                         <svg fill="#1967D2" height="30px" width="30px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -96,7 +114,7 @@
                             Register
                         </p>
                     </a>
-                    <a href="/creat" class="flex text-laravel font-medium text-lg mt-6">
+                    <a href="/create" class="flex text-laravel font-medium text-lg mt-6">
                         <abbr title="ajouter site">
                             <svg fill="#1967D2" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                                 viewBox="0 0 27.963 27.963" xml:space="preserve">
@@ -115,10 +133,31 @@
                         Add Site
                     </p>
                 </a>
-        </div>
+                
+            </div>
+            
+            <script>
+                document.getElementById('toggleButton').addEventListener('click', function() {
+                    var sidebar = document.getElementById('sidebar');
+                    sidebar.classList.toggle('hidden'); 
+                    var main = document.getElementById('item');
+                    main.classList.remove('ml-64'); 
+                    i++;
+                    name();
+                });
+                document.getElementById('showButton').addEventListener('click', function() {
+                    var sidebar = document.getElementById('sidebar');
+                    sidebar.classList.remove('hidden'); 
+                    var main = document.getElementById('item');
+                    main.classList.toggle('ml-64'); 
+                    i++;
+                    name();
+                });
+            </script>
+        
         {{-- @dd($site) --}}
         <!-- Hero -->
-        <main class="ml-64">
+        <main id="item" class="ml-64">
             <!-- Search -->
 
             <div
@@ -134,7 +173,7 @@
             @foreach ($site as $item)
                 
             <!-- Item 1 -->
-            <div class="bg-gray-50 border border-gray-200 rounded p-6 shadow-md">
+            <div  class="bg-gray-50 border border-gray-200 rounded p-6 shadow-md ">
                 <div class="grid md:flex">
                     <div class="grid h-full md:h-48 aspect-square mr-6 md:block">
                         <img
