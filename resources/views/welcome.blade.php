@@ -40,7 +40,6 @@
     <body class="mb-36 h-full">
         <nav class=" sticky top-0 flex justify-between items-center h-16 bg-laravel">
             <div class="flex">
-                @auth
                 <button id="toggleButton" class="ml-2" style="display:none">       
                     <?xml version="1.0" encoding="iso-8859-1"?>
                     <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
@@ -60,7 +59,6 @@
                     <path fill="#FFF" fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"/>
                     </svg>
                 </button>
-                @endauth
                 <a href="/">
                     <p class="text-2xl font-medium text-white ml-4">Polynet</p>
                 </a>
@@ -84,9 +82,9 @@
                 @endif
             </ul>
         </nav>
-        @auth
-            
+        
         <div id="sidebar" class=' flex-col items-start pl-4 justify-start w-64 fixed left-0 h-full hidden bg-gray-100'>
+            @auth
             @if (auth()->user()->role=='S')
             
                 <a href="/register" class="flex text-laravel font-medium text-lg mt-6">
@@ -110,19 +108,19 @@
                     </p>
                 </a>
             @endif
-                    <a href="/create" class="flex text-laravel font-medium text-lg mt-6">
-                        <abbr title="ajouter site">
-                            <svg fill="#1967D2" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                                viewBox="0 0 27.963 27.963" xml:space="preserve">
-                            <g>
-                                <g id="c140__x2B_">
-                                    <path d="M13.98,0C6.259,0,0,6.26,0,13.982s6.259,13.981,13.98,13.981c7.725,0,13.983-6.26,13.983-13.981
-                                    C27.963,6.26,21.705,0,13.98,0z M21.102,16.059h-4.939v5.042h-4.299v-5.042H6.862V11.76h5.001v-4.9h4.299v4.9h4.939v4.299H21.102z
-                                    "/>
-                                </g>
-                                <g id="Capa_1_9_">
-                                </g>
+                <a href="/create" class="flex text-laravel font-medium text-lg mt-6">
+                    <abbr title="ajouter site">
+                        <svg fill="#1967D2" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            viewBox="0 0 27.963 27.963" xml:space="preserve">
+                        <g>
+                            <g id="c140__x2B_">
+                                <path d="M13.98,0C6.259,0,0,6.26,0,13.982s6.259,13.981,13.98,13.981c7.725,0,13.983-6.26,13.983-13.981
+                                C27.963,6.26,21.705,0,13.98,0z M21.102,16.059h-4.939v5.042h-4.299v-5.042H6.862V11.76h5.001v-4.9h4.299v4.9h4.939v4.299H21.102z
+                                "/>
                             </g>
+                            <g id="Capa_1_9_">
+                            </g>
+                        </g>
                         </svg>
                     </abbr>
                     <p class="ml-4">
@@ -130,9 +128,40 @@
                     </p>
                 </a>
                 
+                @endauth
+                <a href="/create" class="flex text-laravel font-medium text-lg mt-6">
+                    <abbr title="ajouter site">
+                        <?xml version="1.0" ?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg fill="#1967D2" width="30px" height="30px" viewBox="0 0 512 512" id="_x30_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,0C114.615,0,0,114.615,0,256s114.615,256,256,256s256-114.615,256-256S397.385,0,256,0z M418.275,146h-46.667  c-5.365-22.513-12.324-43.213-20.587-61.514c15.786,8.776,30.449,19.797,43.572,32.921C403.463,126.277,411.367,135.854,418.275,146  z M452,256c0,17.108-2.191,33.877-6.414,50h-64.034c1.601-16.172,2.448-32.887,2.448-50s-0.847-33.828-2.448-50h64.034  C449.809,222.123,452,238.892,452,256z M256,452c-5.2,0-21.048-10.221-36.844-41.813c-6.543-13.087-12.158-27.994-16.752-44.187  h107.191c-4.594,16.192-10.208,31.1-16.752,44.187C277.048,441.779,261.2,452,256,452z M190.813,306  c-1.847-16.247-2.813-33.029-2.813-50s0.966-33.753,2.813-50h130.374c1.847,16.247,2.813,33.029,2.813,50s-0.966,33.753-2.813,50  H190.813z M60,256c0-17.108,2.191-33.877,6.414-50h64.034c-1.601,16.172-2.448,32.887-2.448,50s0.847,33.828,2.448,50H66.414  C62.191,289.877,60,273.108,60,256z M256,60c5.2,0,21.048,10.221,36.844,41.813c6.543,13.087,12.158,27.994,16.752,44.187H202.404  c4.594-16.192,10.208-31.1,16.752-44.187C234.952,70.221,250.8,60,256,60z M160.979,84.486c-8.264,18.301-15.222,39-20.587,61.514  H93.725c6.909-10.146,14.812-19.723,23.682-28.593C130.531,104.283,145.193,93.262,160.979,84.486z M93.725,366h46.667  c5.365,22.513,12.324,43.213,20.587,61.514c-15.786-8.776-30.449-19.797-43.572-32.921C108.537,385.723,100.633,376.146,93.725,366z   M351.021,427.514c8.264-18.301,15.222-39,20.587-61.514h46.667c-6.909,10.146-14.812,19.723-23.682,28.593  C381.469,407.717,366.807,418.738,351.021,427.514z"/></svg>
+                    </abbr>
+                    <p class="ml-4">
+                        Site
+                    </p>
+                </a>
+                <a href="/create" class="flex text-laravel font-medium text-lg mt-6">
+                    <abbr title="ajouter site">
+                        <svg width="30px" height="30px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m 7.015625 0 c -1.109375 0 -2 0.890625 -2 2 v 1 h -3.015625 c -1.109375 0 -2 0.890625 -2 2 v 2 h 1.015625 c 1.105469 0 2 0.890625 2 2 s -0.894531 2 -2 2 h -1.015625 v 2.988281 c 0 1.105469 0.890625 2 2 2 h 3.015625 v -0.988281 c 0 -1.109375 0.890625 -2 2 -2 c 1.105469 0 2 0.890625 2 2 v 0.988281 h 2 c 1.105469 0 2 -0.894531 2 -2 v -2.988281 h 1 c 1.105469 0 2 -0.890625 2 -2 s -0.894531 -2 -2 -2 h -1 v -2 c 0 -1.109375 -0.894531 -2 -2 -2 h -2 v -1 c 0 -1.109375 -0.894531 -2 -2 -2 z m 0 0" fill="#1967D2"/>
+                        </svg>
+                    </abbr>
+                    <p class="ml-4">
+                        Application
+                    </p>
+                </a>
+                <a href="/create" class="flex text-laravel font-medium text-lg mt-6">
+                    <abbr title="ajouter site">
+                        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 10.5C5.17157 10.5 4.5 11.1716 4.5 12C4.5 12.8284 5.17157 13.5 6 13.5C6.82843 13.5 7.5 12.8284 7.5 12C7.5 11.1716 6.82843 10.5 6 10.5Z" fill="#1967D2"/>
+                            <path d="M10.5 12C10.5 11.1716 11.1716 10.5 12 10.5C12.8284 10.5 13.5 11.1716 13.5 12C13.5 12.8284 12.8284 13.5 12 13.5C11.1716 13.5 10.5 12.8284 10.5 12Z" fill="#1967D2"/>
+                            <path d="M16.5 12C16.5 11.1716 17.1716 10.5 18 10.5C18.8284 10.5 19.5 11.1716 19.5 12C19.5 12.8284 18.8284 13.5 18 13.5C17.1716 13.5 16.5 12.8284 16.5 12Z" fill="#1967D2"/>
+                            </svg>
+                    </abbr>
+                    <p class="ml-4">
+                        Autre
+                    </p>
+                </a>
             </div>
             
-        @endauth
             
         
         {{-- @dd($site) --}}
@@ -189,7 +218,7 @@
                             </div>
                         </h3>
                         
-                        <div class="max-h-36 overflow-hidden max-w-full whatever mt-4 text-sm title-text hidden md:inline-block ">
+                        <div class="max-h-11 overflow-hidden max-w-full whatever mt-4 text-sm title-text hidden md:inline-block ">
                             {{$item->description}}
                         </div>
                     </div>
