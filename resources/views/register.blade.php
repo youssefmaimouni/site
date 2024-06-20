@@ -85,7 +85,8 @@
                             name="password_confirmation" />
                         @error('password_confirmation')
                             <p class="text-red-500 text-xs w-80 mt-1">{{$message}} </p>
-                        @enderror
+                        @enderror 
+                        
                     </div>
                     <div class="mb-6">
                         <div class="flex w-full m-auto items-center">
