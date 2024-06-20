@@ -24,7 +24,7 @@
                     },
                 },
             };
-            let i=0;
+            let i=1;
         </script>
         <style>
             .title-text{
@@ -39,51 +39,31 @@
     </head>
     <body class="mb-36 h-full">
         <nav class=" sticky top-0 flex justify-between items-center h-16 bg-laravel">
-            
-            <button id="toggleButton">Toggle Sidebar</button>
-            <button id="showButton" style="display:none">hide Sidebar</button>
-            <script>
-                function name() {
-                    
-                    if (i % 2 === 0) {
-                        document.getElementById('toggleButton').style.display = 'block'; // Show toggleButton
-                        document.getElementById('showButton').style.display = 'none';     // Hide showButton
-                        
-                    } else {
-                        document.getElementById('toggleButton').style.display = 'none';   // Hide toggleButton
-                        document.getElementById('showButton').style.display = 'block';    // Show showButton
-                        
-                    }
-                }
-            </script>
-            <a href="/">
-                <p class="text-2xl font-medium text-white ml-4">Polynet</p>
-            </a>
-            <ul class="flex space-x-6 mr-6 text-lg items-center text-white">
-                <li>
-                    <a href="/register"
-                        ><i class="fa-solid fa-user-plus text-white"></i> Register</a
-                    >
-                </li>
-                <li>
-                    <a href="/creat"
-                        >
-                        <abbr title="ajouter site">
-                            <svg fill="#FFF" height="30px" width="30px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                                 viewBox="0 0 27.963 27.963" xml:space="preserve">
-                            <g>
-                                <g id="c140__x2B_">
-                                    <path d="M13.98,0C6.259,0,0,6.26,0,13.982s6.259,13.981,13.98,13.981c7.725,0,13.983-6.26,13.983-13.981
-                                    C27.963,6.26,21.705,0,13.98,0z M21.102,16.059h-4.939v5.042h-4.299v-5.042H6.862V11.76h5.001v-4.9h4.299v4.9h4.939v4.299H21.102z
-                                    "/>
-                                </g>
-                                <g id="Capa_1_9_">
-                                </g>
-                            </g>
-                        </svg>
-                    </abbr>
+            <div class="flex">
+                <button id="toggleButton" class="ml-2" style="display:none">       
+                    <?xml version="1.0" encoding="iso-8859-1"?>
+                    <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                    <svg fill="#FFF" height="15px" width="15px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                        viewBox="0 0 460.775 460.775" xml:space="preserve">
+                    <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
+                        c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
+                        c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
+                        c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
+                        l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
+                        c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
+                    </svg>
+                </button>
+                <button id="showButton" style="display:block" class="ml-2">
+                    <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                    <svg width="15px" height="15px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
+                    <path fill="#FFF" fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"/>
+                    </svg>
+                </button>
+                <a href="/">
+                    <p class="text-2xl font-medium text-white ml-4">Polynet</p>
                 </a>
-            </li>
+            </div>
+            <ul class="flex space-x-6 mr-6 text-lg items-center text-white">
             <li>
                 <a href="/logout"
                     ><i class="fa-solid fa-arrow-right-to-bracket"></i>
@@ -93,7 +73,7 @@
             </ul>
         </nav>
             
-        <div id="sidebar" class='flex flex-col items-start pl-4 justify-start w-64 fixed left-0 h-full bg-gray-100'>
+        <div id="sidebar" class='flex flex-col items-start pl-4 justify-start w-64 fixed left-0 h-full hidden bg-gray-100'>
             <a href="/register" class="flex text-laravel font-medium text-lg mt-6">
                         <?xml version="1.0" encoding="iso-8859-1"?>
                         <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
@@ -136,28 +116,11 @@
                 
             </div>
             
-            <script>
-                document.getElementById('toggleButton').addEventListener('click', function() {
-                    var sidebar = document.getElementById('sidebar');
-                    sidebar.classList.toggle('hidden'); 
-                    var main = document.getElementById('item');
-                    main.classList.remove('ml-64'); 
-                    i++;
-                    name();
-                });
-                document.getElementById('showButton').addEventListener('click', function() {
-                    var sidebar = document.getElementById('sidebar');
-                    sidebar.classList.remove('hidden'); 
-                    var main = document.getElementById('item');
-                    main.classList.toggle('ml-64'); 
-                    i++;
-                    name();
-                });
-            </script>
+            
         
         {{-- @dd($site) --}}
         <!-- Hero -->
-        <main id="item" class="ml-64">
+        <main id="item" class="">
             <!-- Search -->
 
             <div
@@ -201,5 +164,39 @@
             </div>
         </main>
     </body>
+    <script>
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('hidden'); 
+            var main = document.getElementById('item');
+            main.classList.remove('ml-64'); 
+            i++;
+            name();
+        });
+        document.getElementById('showButton').addEventListener('click', function() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.remove('hidden'); 
+            var main = document.getElementById('item');
+            if(screen.width>430){
+                main.classList.toggle('ml-64'); 
+            }
+            i++;
+            name();
+        });
+    </script>
+    <script>
+        function name() {
+            
+            if (i % 2 === 0) {
+                document.getElementById('toggleButton').style.display = 'block'; // Show toggleButton
+                document.getElementById('showButton').style.display = 'none';     // Hide showButton
+                
+            } else {
+                document.getElementById('toggleButton').style.display = 'none';   // Hide toggleButton
+                document.getElementById('showButton').style.display = 'block';    // Show showButton
+                
+            }
+        }
+    </script>
     </html>
     
