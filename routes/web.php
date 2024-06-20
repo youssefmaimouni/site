@@ -21,3 +21,9 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/create', [SiteController::class, 'site_create'])->name('create');
 Route::post('/site/store', [SiteController::class, 'store'])->name('site.store');
+
+Route::get('/toggle-sidebar', function () {
+    $isOpen = session('sidebar_open', false); // Get current state, default is false
+    session(['sidebar_open' => !$isOpen]); // Toggle the state
+    return redirect()->back(); // Redirect back to the previous page
+})->name('toggle-sidebar');
