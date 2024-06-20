@@ -33,11 +33,6 @@
             </a>
             <ul class="flex space-x-6 mr-6 text-lg text-white">
                 <li>
-                    <a href="/register"
-                        ><i class="fa-solid fa-user-plus text-white"></i> Register</a
-                    >
-                </li>
-                <li>
                     <a href="/login"
                         ><i class="fa-solid fa-arrow-right-to-bracket"></i>
                         Login</a
@@ -55,7 +50,7 @@
                         <h2 class="text-2xl font-bold uppercase mb-1">
                             Log In
                         </h2>
-                        <p class="mb-4">Log in to post gigs</p>
+                        <p class="mb-4">Log in</p>
                     </header>
 
                     <form action="/authentification" method="POST">
@@ -101,14 +96,6 @@
                             </button>
                         </div>
 
-                        <div class="mt-8">
-                            <p>
-                                Don't have an account?
-                                <a href="/register" class="text-laravel"
-                                    >Register</a
-                                >
-                            </p>
-                        </div>
                     </form>
                 </div>
             </div>
