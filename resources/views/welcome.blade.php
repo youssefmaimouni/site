@@ -150,7 +150,7 @@
                 </button>
                 <form action="/categorier/store" method="POST" id="add" class="flex items-center justify-around w-full hidden">
                     @csrf
-                    <input type="text" name="categorier[0]" class="flex text-laravel font-medium text items-center border-laravel border focus:border-0 ml-4 my-3 w-44 ">
+                    <input type="text" name="categorier" class="flex text-laravel font-medium text items-center border-laravel border focus:border-0 ml-4 my-3 w-44 ">
                     <button type="submit" class="bg-laravel p-1 h-fit w-fit rounded-md">
                         <svg fill="#ffff" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                             viewBox="0 0 27.963 27.963" xml:space="preserve">
@@ -166,7 +166,7 @@
                         </svg>
                     </button>
                 </form>
-                @error('categorier.0')
+                @error('categorier')
                     <p id="error" class="text-red-500 text-xs ml-4 mt-1">{{$message}}</p>
                 @enderror 
                 <div class="h-px  w-11/12 mt-4 bg-laravel">‎ </div>
@@ -196,18 +196,21 @@
                             <p id="p-{{$item->id}}" class="ml-4 text-laravel capitalize">
                                 {{$item->categorier}}
                             </p>
-                            <input type="text" name="categorier[1]" id="input-{{$item->id}}" value="{{$item->categorier}}" class="ml-4 w-20 capitalize hidden" />
-                            <button type="button" id="b-{{$item->id}}" onclick="toggleEdit({{$item->id}})" class="">
-                                <?xml version="1.0" ?>
-                                <svg class="feather feather-edit" fill="none" height="24" stroke="#1967D2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
-                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-                                </svg></button>
-                            <button type="submit" id="save-{{$item->id}}" class=" hidden">
-                                <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-                                <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.75 6L7.5 5.25H16.5L17.25 6V19.3162L12 16.2051L6.75 19.3162V6ZM8.25 6.75V16.6838L12 14.4615L15.75 16.6838V6.75H8.25Z" fill="#1967D2"/>
-                                </svg></button>
+                            @auth
+                                <input type="text" name="categorier" id="input-{{$item->id}}" value="{{$item->categorier}}" class="ml-4 w-20 capitalize hidden" />
+                                <button type="button" id="b-{{$item->id}}" onclick="toggleEdit({{$item->id}})" class="">
+                                    <?xml version="1.0" ?>
+                                    <svg class="feather feather-edit" fill="none" height="24" stroke="#1967D2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                                    </svg></button>
+                                <button type="submit" id="save-{{$item->id}}" class=" hidden">
+                                    <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.75 6L7.5 5.25H16.5L17.25 6V19.3162L12 16.2051L6.75 19.3162V6ZM8.25 6.75V16.6838L12 14.4615L15.75 16.6838V6.75H8.25Z" fill="#1967D2"/>
+                                    </svg>
+                                </button>
+                            @endauth
                         </div>
                         </form>
                 @endforeach
@@ -398,10 +401,11 @@
             form.classList.toggle('hidden');
         }
     </script>
-    @error('categorier.1')
-    <script>
-        alert('{{$message}} ');
-    </script>
-    @enderror 
+    @error('categorier2')
+        <script>
+            alert('{{$message}}')
+        </script>
+        
+    @enderror
     </html>
     
