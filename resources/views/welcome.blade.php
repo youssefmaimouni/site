@@ -150,7 +150,7 @@
                 </button>
                 <form action="/categorier/store" method="POST" id="add" class="flex items-center justify-around w-full hidden">
                     @csrf
-                    <input type="text" name="categorier" class="flex text-laravel font-medium text items-center border-laravel border focus:border-0 ml-4 my-3 w-44 ">
+                    <input type="text" name="categorier[0]" class="flex text-laravel font-medium text items-center border-laravel border focus:border-0 ml-4 my-3 w-44 ">
                     <button type="submit" class="bg-laravel p-1 h-fit w-fit rounded-md">
                         <svg fill="#ffff" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                             viewBox="0 0 27.963 27.963" xml:space="preserve">
@@ -166,7 +166,7 @@
                         </svg>
                     </button>
                 </form>
-                @error('categorier')
+                @error('categorier.0')
                     <p id="error" class="text-red-500 text-xs ml-4 mt-1">{{$message}}</p>
                 @enderror 
                 <div class="h-px  w-11/12 mt-4 bg-laravel">‎ </div>
@@ -401,5 +401,10 @@
             form.classList.toggle('hidden');
         }
     </script>
+    @error('categorier.1')
+    <script>
+        alert('{{$message}} ');
+    </script>
+    @enderror 
     </html>
     
