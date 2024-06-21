@@ -12,7 +12,7 @@ class categorierController extends Controller
     public function store(Request $request)
     {
         $formFields = $request->validate([
-            'categorier.0' => 'required|string'
+            'categorier.0' => 'required|string|unique:categoriers,categorier'
         ]);
 
         $category = new categorier();
@@ -23,12 +23,12 @@ class categorierController extends Controller
 
     function update(Request $request, Categorier $categorier)
 {
-    $newCategorier = strtolower($request->categorier[1]);
+    $newCategorier = strtolower($request->categorier);
     if ($newCategorier === $categorier->categorier) {
-        return redirect('/')->with('success', 'No changes were made to the category.');
+        return redirect('/');
     }
     $formFields = $request->validate([
-        'categorier.1' => 'required|string'
+        'categorier.1' => 'unique:categoriers,categorier|required|string'
     ]);
     $categorier->categorier = $newCategorier;
     $categorier->save();
