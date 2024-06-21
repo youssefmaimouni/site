@@ -62,7 +62,7 @@ class SiteController extends Controller
     function site_update(Site $site)
     {
         return View('update_site', [
-            'site'=>$site,
+            'site' => $site,
             'categorier' => categorier::all()
         ]);
     }
