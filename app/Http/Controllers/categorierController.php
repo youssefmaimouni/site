@@ -17,10 +17,10 @@ class categorierController extends Controller
         return redirect('/')->with('success', 'Categoy created  successfully');
     }
 
-    function update(CategorierRequest $request, categorier $category)
+    function update(CategorierRequest $request, categorier $categorier)
     {
-        $category->categorier = $request->new_cat; 
-        $category->save();
+        $categorier->categorier =strtolower($request->categorier); 
+        $categorier->save();
         return redirect('/')->with('success', 'Categoy updated successfully');
     }
 

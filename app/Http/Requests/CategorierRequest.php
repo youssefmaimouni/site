@@ -22,7 +22,7 @@ class CategorierRequest extends FormRequest
     public function rules(): array
     {
         return [
-           'categorier'=>'required'
+           'categorier'=>'required|string|unique:categoriers,categorier'
         ];
     }
 }

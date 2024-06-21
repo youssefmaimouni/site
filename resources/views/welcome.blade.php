@@ -185,13 +185,40 @@
                     </p>
                 </a>
                 @foreach ($categorier as $item)
-                <a href="/{{$item->id}}" class="flex text-laravel font-medium text items-center hover:bg-blue-100 w-full h-full p-2 pl-12">
-                    <p class="ml-4 capitalize">
-                        {{$item->categorier}}
-                    </p>
-                </a>
+                    <div class="flex items-center hover:bg-blue-100 w-full h-full p-2 pl-12">
+                        <form action="/categorier/update/{{$item->id}}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <p id="p-{{$item->id}}" class="ml-4 capitalize">
+                                {{$item->categorier}}
+                            </p>
+                            <input type="text" name="categorier" id="input-{{$item->id}}" value="{{$item->categorier}}" class="ml-4 capitalize hidden" />
+                            <button type="button" id="b-{{$item->id}}" onclick="toggleEdit({{$item->id}})" class="ml-2">Edit</button>
+                            <button type="submit" id="save-{{$item->id}}" class="ml-2 hidden">Save</button>
+                        </form>
+                    </div>
                 @endforeach
             </div>
+            <script>
+                function toggleEdit(id) {
+                    var p = document.getElementById('p-' + id);
+                    var input = document.getElementById('input-' + id);
+                    var saveButton = document.getElementById('save-' + id);
+                    var Button = document.getElementById('b-' + id);
+                
+                    if (p.style.display === 'none') {
+                        p.style.display = 'block';
+                        input.style.display = 'none';
+                        saveButton.style.display = 'none';
+                    } else {
+                        p.style.display = 'none';
+                        input.style.display = 'block';
+                        saveButton.style.display = 'block';
+                        input.focus();
+                    }
+                }
+                </script>
+                
             
             
         
