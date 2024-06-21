@@ -167,7 +167,7 @@
                         <input type="submit" value="Supprimer" class="bg-laravel text-white rounded py-2 px-4 hover:bg-laravel2 text-lg" form="hadik">
                     </div>
                 </form>
-                <form action="/site/delete/{{$site->id}}" method="POST" id="hadik">
+                <form action="/site/delete/{{$site->id}}" method="POST" id="hadik" onsubmit="warnning()">
                     @csrf
                     @method('DELETE')
                 </form>
@@ -206,5 +206,11 @@
 
         }
     });
+
+    function warnning() {
+        if (!confirm("Voulez-vous vraiment supprimer ce site ?")) {
+        event.preventDefault();
+        }
+    }
 </script>
 </html>
