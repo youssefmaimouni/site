@@ -24,6 +24,7 @@ class categorierController extends Controller
     function update(Request $request, Categorier $categorier)
     {
         $newCategorier = strtolower($request->categorier2);
+
         if ($newCategorier === $categorier->categorier) {
             return redirect('/')->with('success', 'No changes were made to the category.');
         }
