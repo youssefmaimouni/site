@@ -129,7 +129,7 @@
                         Add Site
                     </p>
                 </a>
-                <a href="/create" class="flex text-laravel font-medium text items-center  pl-4 mt-6">
+                <button onclick="show()" href="/create" class="flex text-laravel font-medium text items-center  pl-4 mt-6">
                     <abbr title="ajouter site">
                         <svg fill="#1967D2" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                             viewBox="0 0 27.963 27.963" xml:space="preserve">
@@ -147,8 +147,9 @@
                     <p class="ml-4">
                         Add Categorier
                     </p>
-                </a>
-                <form action="" class="flex items-center justify-around w-full">
+                </button>
+                <form action="/categorier/store" method="POST" id="add" class="flex items-center justify-around w-full hidden">
+                    @csrf
                     <input type="text" name="categorier" class="flex text-laravel font-medium text items-center border-laravel border focus:border-0 ml-4 my-3 w-44 ">
                     <button type="submit" class="bg-laravel p-1 h-fit w-fit rounded-md">
                         <svg fill="#ffff" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -165,6 +166,9 @@
                         </svg>
                     </button>
                 </form>
+                @error('categorier')
+                    <p id="error" class="text-red-500 text-xs ml-4 mt-1">{{$message}}</p>
+                @enderror 
                 <div class="h-px  w-11/12 mt-4 bg-laravel">‎ </div>
                 @endauth
                 <a href="/create" class="flex text-laravel font-medium text items-center  pl-4 mt-6">
@@ -369,6 +373,18 @@
         }
         if (screen.width<480) {
             document.getElementById('toggleButton').click();
+        }
+    </script>
+    <script>
+        const empt = document.getElementById("error").innerHTML;
+        // nameInput.addEventListener("invalid", join);
+        if(empt != null && empt != ""){
+            // 
+            show();
+        }
+        function show(){
+            var form = document.getElementById('add');
+            form.classList.toggle('hidden');
         }
     </script>
     </html>

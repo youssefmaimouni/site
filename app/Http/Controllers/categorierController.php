@@ -10,16 +10,16 @@ use Illuminate\Http\Request;
 class categorierController extends Controller
 {
     public function store(CategorierRequest $request)
-    { 
+    {
         $category = new categorier();
-        $category->categorier = $request->new_cat; 
+        $category->categorier = strtolower($request->categorier);
         $category->save();
         return redirect('/')->with('success', 'Categoy created  successfully');
     }
 
     function update(CategorierRequest $request, categorier $categorier)
     {
-        $categorier->categorier =strtolower($request->categorier); 
+        $categorier->categorier = strtolower($request->categorier);
         $categorier->save();
         return redirect('/')->with('success', 'Categoy updated successfully');
     }
