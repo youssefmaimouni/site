@@ -8,6 +8,7 @@ use App\Http\Requests\SiteRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\View\View;
 use App\Http\Controllers\Controller;
+use App\Models\categorier;
 use Illuminate\Support\Facades\Storage;
 
 class SiteController extends Controller
@@ -16,32 +17,23 @@ class SiteController extends Controller
     {
         return View('welcome', [
             'site' => DB::table('sites')->paginate(8),
+            'categorier' => categorier::all()
         ]);
     }
-    public function site()
+    public function site($id)
     {
         $sites = DB::table('sites')
-               ->where('categorier','=' ,'site')
+               ->where('id_cat','=' ,$id)
                ->paginate(8);
-
-        return view('welcome', ['site' => $sites]);
+        if (!$sites->isEmpty() ) {
+            return view('welcome', [
+                'site' => $sites,
+                'categorier' => categorier::all(),
+            ]);
+        }
+        return abort(404);
     }
-    public function app()
-    {
-        $sites = DB::table('sites')
-               ->where('categorier','=' ,'application')
-               ->paginate(8);
-
-        return view('welcome', ['site' => $sites]);
-    }
-    public function autre()
-    {
-        $sites = DB::table('sites')
-               ->where('categorier','=' ,'autre')
-               ->paginate(8);
-
-        return view('welcome', ['site' => $sites]);
-    }
+    
     public function store(SiteRequest $request)
     {
         $site = new Site();

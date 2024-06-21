@@ -12,7 +12,11 @@ class Site extends Model
         'lien',
         'logo',
         'titre',
-        'categorier',
         'description'
     ];
+
+    public function categorier()
+    {
+        return $this->belongsTo(categorier::class, 'id_cat');
+    }
 }
