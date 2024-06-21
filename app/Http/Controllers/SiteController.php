@@ -56,7 +56,7 @@ class SiteController extends Controller
 
     function site_create()
     {
-        return View('creat_site');
+        return View('creat_site',['categorier' => categorier::all()]);
     }
     function update(SiteRequest $request, Site $site)
     {
