@@ -17,7 +17,7 @@ Route::post('/authentification', [LoginController::class, 'authentification'])->
 
 Route::get('/register', [UserController::class, 'register'])->name('register')->middleware('auth');
 Route::post('/store', [UserController::class, 'store'])->name('store')->middleware('auth');
-Route::post('/user/update//{id}', [UserController::class, 'update'])->name('update')->middleware('auth');
+Route::post('/user/update/{id}', [UserController::class, 'update'])->name('update')->middleware('auth');
 Route::post('/user/delete/{id}', [UserController::class, 'delete'])->name('delete')->middleware('auth');
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
@@ -33,4 +33,4 @@ Route::get('/toggle-sidebar', function () {
     return redirect()->back(); // Redirect back to the previous page
 })->name('toggle-sidebar');
 
-Route::get('/{id}',[SiteController::class,'site'])->name('site');
+Route::get('/{id}', [SiteController::class, 'site'])->name('site');
