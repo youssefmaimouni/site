@@ -160,11 +160,16 @@
                         @enderror                    
                     </div>
 
-                    <div class="mb-6">
+                    <div class="mb-6 flex justify-between">
                         <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-laravel2 text-lg">
-                            Submit
+                            Modifier
                         </button>
+                        <input type="submit" value="Supprimer" class="bg-laravel text-white rounded py-2 px-4 hover:bg-laravel2 text-lg" form="hadik">
                     </div>
+                </form>
+                <form action="/site/delete/{{$site->id}}" method="POST" id="hadik">
+                    @csrf
+                    @method('DELETE')
                 </form>
             </div>
         </div>
