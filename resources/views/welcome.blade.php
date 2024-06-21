@@ -171,7 +171,7 @@
                 @enderror 
                 <div class="h-px  w-11/12 mt-4 bg-laravel">‎ </div>
                 @endauth
-                <a href="/create" class="flex text-laravel font-medium text items-center  pl-4 mt-6">
+                <a class="flex text-laravel font-medium text items-center  pl-4 mt-6">
                     
                     <?xml version="1.0" encoding="utf-8"?>
                     <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -189,15 +189,17 @@
                     </p>
                 </a>
                 @foreach ($categorier as $item)
-                <form action="/categorier/update/{{$item->id}}" method="POST">
-                    <div class="flex items-center  hover:bg-blue-100 w-full h-full p-2 pl-12">
+                <form action="/categorier/update/{{$item->id}}" method="POST" class="w-full">
+                    <div class="flex items-center justify-between  hover:bg-blue-100 w-full h-full p-2 pl-12">
                             @csrf
                             @method('PUT')
-                            <p id="p-{{$item->id}}" class="ml-4 text-laravel capitalize">
-                                {{$item->categorier}}
-                            </p>
+                            <a href="/{{$item->id}}">
+                                <p id="p-{{$item->id}}" class="ml-4 text-laravel capitalize">
+                                    {{$item->categorier}}
+                                </p>
+                            </a>
                             @auth
-                                <input type="text" name="categorier" id="input-{{$item->id}}" value="{{$item->categorier}}" class="ml-4 w-20 capitalize hidden" />
+                                <input type="text" name="categorier2" id="input-{{$item->id}}" value="{{$item->categorier}}" class="ml-4 w-full capitalize hidden" />
                                 <button type="button" id="b-{{$item->id}}" onclick="toggleEdit({{$item->id}})" class="">
                                     <?xml version="1.0" ?>
                                     <svg class="feather feather-edit" fill="none" height="24" stroke="#1967D2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -408,4 +410,3 @@
         
     @enderror
     </html>
-    
