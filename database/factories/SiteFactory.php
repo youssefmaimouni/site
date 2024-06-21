@@ -25,7 +25,7 @@ class SiteFactory extends Factory
         return [
             'lien' => $this->faker->url,
             'logo' => 'logos/' . $fileName,
-            'titre' => $this->faker->sentence,
+            'titre' => $this->faker->words(2,true),
             'id_cat'=>categorier::inRandomOrder()->first()->id,
             'description' => $this->faker->paragraph,
         ];
