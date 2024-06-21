@@ -17,7 +17,7 @@ class CategorierFactory extends Factory
     public function definition(): array
     {
         return [
-            'categorier' => $this->faker->unique()->word(),
+            'categorier' =>strtolower( $this->faker->unique()->word()),
         ];
     }
 }
