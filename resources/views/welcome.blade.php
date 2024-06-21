@@ -165,7 +165,8 @@
             <!-- Search -->
 
             <div
-                class="lg:grid xl:grid-cols-2 2xl:grid-cols-3 gap-4 space-y-4 md:space-y-0 mx-4 mt-4"
+                id="ma"
+                class="lg:grid xl:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4 mt-4"
             >
             <style>
                 .image{
@@ -271,6 +272,8 @@
             sidebar.classList.remove('flex'); 
             var main = document.getElementById('item');
             main.classList.remove('ml-64'); 
+            var ma=document.getElementById('ma');
+            ma.classList.toggle('2xl:grid-cols-3'); 
             i++;
             name();
         });
@@ -282,6 +285,8 @@
             if(screen.width>480){
                 main.classList.toggle('ml-64'); 
             }
+            var ma=document.getElementById('ma');
+            ma.classList.remove('2xl:grid-cols-3'); 
             i++;
             name();
         });
