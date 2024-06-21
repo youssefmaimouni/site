@@ -43,7 +43,7 @@
     <body class="mb-36 h-full">
         <nav class=" sticky top-0 flex justify-between items-center h-16 bg-laravel">
             <div class="flex">
-                <button id="toggleButton" class="ml-2" style="display:block">       
+                <button id="toggleButton" class="ml-2 mr-4" style="display:block">       
                     <?xml version="1.0" encoding="iso-8859-1"?>
                     <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
                     <svg fill="#FFF" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -56,14 +56,14 @@
                         c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
                     </svg>
                 </button>
-                <button id="showButton" style="display:none" class="ml-2">
+                <button id="showButton" style="display:none" class="ml-2 mr-4">
                     <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
                     <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
                     <path fill="#FFF" fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"/>
                     </svg>
                 </button>
                 <a href="/">
-                    <p class="text-2xl font-medium text-white ml-4">Polynet</p>
+                    <p class="text-2xl font-medium text-white">Polynet</p>
                 </a>
             </div>
             <ul class="flex space-x-6 mr-6 text-lg items-center text-white">
