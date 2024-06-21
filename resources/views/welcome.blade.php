@@ -129,9 +129,8 @@
                         Add Site
                     </p>
                 </a>
-                
-                @endauth
                 <div class="h-px  w-11/12 mt-4 bg-laravel">‎ </div>
+                @endauth
                 <a href="/create" class="flex text-laravel font-medium text items-center  pl-4 mt-6">
                     
                     <?xml version="1.0" encoding="utf-8"?>
