@@ -17,14 +17,14 @@ Route::post('/authentification', [LoginController::class, 'authentification'])->
 
 Route::get('/register', [UserController::class, 'register'])->name('register')->middleware('auth');
 Route::post('/store', [UserController::class, 'store'])->name('store')->middleware('auth');
-Route::post('/user/update', [UserController::class, 'update'])->name('update')->middleware('auth');
+Route::post('/user/update//{id}', [UserController::class, 'update'])->name('update')->middleware('auth');
 Route::post('/user/delete/{id}', [UserController::class, 'delete'])->name('delete')->middleware('auth');
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
 Route::get('/create', [SiteController::class, 'site_create'])->name('create')->middleware('auth');
 Route::post('/site/store', [SiteController::class, 'store'])->name('site.store')->middleware('auth');
-Route::post('/site/update', [SiteController::class, 'update'])->name('site.update')->middleware('auth');
+Route::post('/site/update/{id}', [SiteController::class, 'update'])->name('site.update')->middleware('auth');
 Route::post('/site/delete/{id}', [SiteController::class, 'delete'])->name('site.delete')->middleware('auth');
 
 Route::get('/toggle-sidebar', function () {
