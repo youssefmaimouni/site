@@ -344,7 +344,7 @@
             </div>
         </div>
         @if (count($site)==0)
-            <p class="w-full h-full text-7xl  text-center text-gray-400 font-medium">NO SITE YET</p>
+            <p class="w-full h-full text-7xl  text-center text-gray-400 font-medium">Aucune site dans cette categorier</p>
         @endif
         </main>
     </body>
