@@ -23,13 +23,14 @@ class SiteController extends Controller
     public function site($id)
     {
         $sites = Site::where('id_cat', $id)->paginate(10);
-        if (!$sites->isEmpty()) {
-            return view('welcome', [
-                'site' => $sites,
-                'categorier' => categorier::all(),
-            ]);
+        $category=categorier::where('id',$id)->first();;
+        if (!$category) {
+            return abort(404);
         }
-        return abort(404);
+        return view('welcome', [
+            'site' => $sites,
+            'categorier' => categorier::all(),
+        ]);
     }
 
     public function store(SiteRequest $request)
