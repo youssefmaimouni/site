@@ -16,16 +16,14 @@ class SiteController extends Controller
     public function index()
     {
         return View('welcome', [
-            'site' => DB::table('sites')->paginate(8),
+            'site' => Site::paginate(10),
             'categorier' => categorier::all()
         ]);
     }
     public function site($id)
     {
-        $sites = DB::table('sites')
-               ->where('id_cat','=' ,$id)
-               ->paginate(8);
-        if (!$sites->isEmpty() ) {
+        $sites = Site::where('id_cat', $id)->paginate(10);
+        if (!$sites->isEmpty()) {
             return view('welcome', [
                 'site' => $sites,
                 'categorier' => categorier::all(),
@@ -33,7 +31,7 @@ class SiteController extends Controller
         }
         return abort(404);
     }
-    
+
     public function store(SiteRequest $request)
     {
         $site = new Site();
