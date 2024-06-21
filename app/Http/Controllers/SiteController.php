@@ -41,7 +41,7 @@ class SiteController extends Controller
         if ($request->file('logo') != null) {
             $site->logo =  $request->file('logo')->store('logos', 'public');
         }
-        if ($request->categorier==-1) {
+        if ($request->categorier == -1) {
             $category = new categorier();
             $category->categorier = strtolower($request->new_cat);
             $category->save();
@@ -56,7 +56,7 @@ class SiteController extends Controller
 
     function site_create()
     {
-        return View('creat_site',['categorier' => categorier::all()]);
+        return View('creat_site', ['categorier' => categorier::all()]);
     }
     function update(SiteRequest $request, Site $site)
     {
@@ -66,7 +66,7 @@ class SiteController extends Controller
         if ($request->file('logo') != null) {
             $site->logo =  $request->file('logo')->store('logos', 'public');
         }
-        if ($request->categorier==-1) {
+        if ($request->categorier == -1) {
             $category = new categorier();
             $category->categorier = strtolower($request->new_cat);
             $category->save();

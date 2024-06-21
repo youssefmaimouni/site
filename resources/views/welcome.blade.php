@@ -192,7 +192,7 @@
                             alt=""
                         />
                     </div>
-                    <div class="">
+                    <div class=" w-full">
                         <h3 class="text-2xl flex">
                             <div class="w-full">                            
                                 {{$item->titre}}

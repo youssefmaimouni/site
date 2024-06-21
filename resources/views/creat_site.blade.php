@@ -136,10 +136,12 @@
                     <div class="mb-6">
                         <label for="categorier" class="inline-block text-lg mb-2">Categorier </label>
                         <select name="categorier" class="border border-gray-200 rounded p-2 w-full" id="categorier">
-                            <option value="site">site</option>
-                            <option value="application">application</option>
-                            <option value="autre">autre</option>
-                          </select>
+                            @foreach ($categorier as $item)
+                                <option value="{{$item->id}}">{{$item->categorier}} </option>
+                                @endforeach
+                                <option value="-1">Autre </option>
+                            </select>
+                            <input type="hidden" id="writeIn" class="border border-gray-200 rounded mt-2 p-2 w-full" name="new_cat" placeholder="new categorier"  />
                         @error('categorier')
                             <p class="text-red-500 test-xs mt-1">{{$message}}</p>
                         @enderror                    
@@ -162,6 +164,18 @@
         </div>
     </main>
 </body>
+<script>
+    const select = document.getElementById('categorier');
+    const writeIn = document.getElementById('writeIn');
+
+    select.addEventListener('change', function() {
+    if (select.value === '-1') {
+        writeIn.type="text"
+    } else {
+        writeIn.type="hidden"
+    }
+    });
+</script>
 <script>
     const img = document.querySelector('#photo');
     const file = document.querySelector('#fileToUpload');
