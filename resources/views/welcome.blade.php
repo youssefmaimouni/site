@@ -150,7 +150,7 @@
                 </button>
                 <form action="/categorier/store" method="POST" id="add" class="flex items-center justify-around w-full hidden">
                     @csrf
-                    <input type="text" name="categorier[0]" class="flex text-laravel font-medium text items-center border-laravel border focus:border-0 ml-4 my-3 w-44 ">
+                    <input type="text" name="categorier" class="flex text-laravel font-medium text items-center border-laravel border focus:border-0 ml-4 my-3 w-44 ">
                     <button type="submit" class="bg-laravel p-1 h-fit w-fit rounded-md">
                         <svg fill="#ffff" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                             viewBox="0 0 27.963 27.963" xml:space="preserve">
@@ -166,7 +166,7 @@
                         </svg>
                     </button>
                 </form>
-                @error('categorier.0')
+                @error('categorier')
                     <p id="error" class="text-red-500 text-xs ml-4 mt-1">{{$message}}</p>
                 @enderror 
                 <div class="h-px  w-11/12 mt-4 bg-laravel">‎ </div>
@@ -193,11 +193,13 @@
                     <div class="flex items-center justify-between  hover:bg-blue-100 w-full h-full p-2 pl-12">
                             @csrf
                             @method('PUT')
-                            <p id="p-{{$item->id}}" class="ml-4 text-laravel capitalize">
-                                {{$item->categorier}}
-                            </p>
+                            <a href="/{{$item->id}}">
+                                <p id="p-{{$item->id}}" class="ml-4 text-laravel capitalize">
+                                    {{$item->categorier}}
+                                </p>
+                            </a>
                             @auth
-                                <input type="text" name="categorier" id="input-{{$item->id}}" value="{{$item->categorier}}" class="ml-4 w-20 capitalize hidden" />
+                                <input type="text" name="categorier2" id="input-{{$item->id}}" value="{{$item->categorier}}" class="ml-4 w-full capitalize hidden" />
                                 <button type="button" id="b-{{$item->id}}" onclick="toggleEdit({{$item->id}})" class="">
                                     <?xml version="1.0" ?>
                                     <svg class="feather feather-edit" fill="none" height="24" stroke="#1967D2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -401,10 +403,11 @@
             form.classList.toggle('hidden');
         }
     </script>
-    @error('categorier.1')
-    <script>
-        alert('{{$message}} ');
-    </script>
-    @enderror 
+    @error('categorier2')
+        <script>
+            alert('{{$message}}')
+        </script>
+        
+    @enderror
     </html>
     
