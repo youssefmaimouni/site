@@ -26,7 +26,7 @@ class SiteRequest extends FormRequest
             'description'=>'required |string',
             'titre'=>'required|string',
             'lien'=>'required| string',
-            'categorier'=>['required', Rule::in(['site', 'application', 'autre'])]
+            'id_cat'=>'required'
 
         ];
     }
