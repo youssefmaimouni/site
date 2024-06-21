@@ -294,6 +294,9 @@
                 
             }
         }
+        if (screen.width<480) {
+            document.getElementById('toggleButton').click();
+        }
     </script>
     </html>
     
