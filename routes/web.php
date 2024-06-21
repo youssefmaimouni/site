@@ -1,14 +1,12 @@
 <?php
 
+use App\Http\Controllers\categorierController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [SiteController::class, 'index'])->name('index');
-Route::get('/site', [SiteController::class, 'site'])->name('site');
-Route::get('/application', [SiteController::class, 'app'])->name('application');
-Route::get('/autre', [SiteController::class, 'autre'])->name('autre');
 
 Route::get('/creat', function () {
     return view('creat_site');
@@ -30,3 +28,5 @@ Route::get('/toggle-sidebar', function () {
     session(['sidebar_open' => !$isOpen]); // Toggle the state
     return redirect()->back(); // Redirect back to the previous page
 })->name('toggle-sidebar');
+
+Route::get('/{id}',[SiteController::class,'site'])->name('site');

@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('lien');
             $table->string('logo')->default('logos/logo.jpg');
             $table->string('titre');
-            $table->string('categorier');
+            $table->unsignedBigInteger('id_cat');
+            $table->foreign('id_cat')->references('id')->on('categoriers')->onDelete('cascade');
             $table->longText('description');
             $table->timestamps();
         });

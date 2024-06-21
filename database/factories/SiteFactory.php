@@ -1,6 +1,7 @@
 <?php
 namespace Database\Factories;
 
+use App\Models\categorier;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
@@ -25,7 +26,7 @@ class SiteFactory extends Factory
             'lien' => $this->faker->url,
             'logo' => 'logos/' . $fileName,
             'titre' => $this->faker->sentence,
-            'categorier'=>$this->faker->randomElement(['site', 'application', 'autre']),
+            'id_cat'=>categorier::inRandomOrder()->first()->id,
             'description' => $this->faker->paragraph,
         ];
     }
