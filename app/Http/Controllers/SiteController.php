@@ -41,13 +41,13 @@ class SiteController extends Controller
         if ($request->file('logo') != null) {
             $site->logo =  $request->file('logo')->store('logos', 'public');
         }
-        if (stristr($request->categorier, 'other')) {
+        if ($request->categorier==-1) {
             $category = new categorier();
-            $category->categorier = $request->new_cat;
+            $category->categorier = strtolower($request->new_cat);
             $category->save();
             $site->id_cat = $category->id;
         } else {
-            $site->id_cat = categorier::select('id')->where('', $request->categorier)->first();
+            $site->id_cat =  $request->categorier;
         }
         $site->save();
         return redirect('/')->with('success', 'Site created successfully');
@@ -61,9 +61,19 @@ class SiteController extends Controller
     function update(SiteRequest $request, Site $site)
     {
         $site->lien = $request->lien;
-        $site->logo = $request->logo;
         $site->titre = $request->titre;
         $site->description = $request->description;
+        if ($request->file('logo') != null) {
+            $site->logo =  $request->file('logo')->store('logos', 'public');
+        }
+        if ($request->categorier==-1) {
+            $category = new categorier();
+            $category->categorier = strtolower($request->new_cat);
+            $category->save();
+            $site->id_cat = $category->id;
+        } else {
+            $site->id_cat =  $request->categorier;
+        }
         $site->save();
         return redirect('/')->with('success', 'Site updated successfully');
     }
