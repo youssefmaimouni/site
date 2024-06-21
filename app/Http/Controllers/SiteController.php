@@ -16,7 +16,7 @@ class SiteController extends Controller
     public function index()
     {
         return View('welcome', [
-            'site' => Site::paginate(10),
+            'site' => Site::paginate(8),
             'categorier' => categorier::all()
         ]);
     }
@@ -37,10 +37,17 @@ class SiteController extends Controller
         $site = new Site();
         $site->lien = $request->lien;
         $site->titre = $request->titre;
-        $site->categorier = $request->categorier;
         $site->description = $request->description;
         if ($request->file('logo') != null) {
             $site->logo =  $request->file('logo')->store('logos', 'public');
+        }
+        if (stristr($request->categorier, 'other')) {
+            $category = new categorier();
+            $category->categorier = $request->new_cat;
+            $category->save();
+            $site->id_cat = $category->id;
+        } else {
+            $site->id_cat = categorier::select('id')->where('', $request->categorier)->first();
         }
         $site->save();
         return redirect('/')->with('success', 'Site created successfully');
