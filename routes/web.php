@@ -23,6 +23,7 @@ Route::delete('/user/delete/{id}', [UserController::class, 'delete'])->name('del
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
 Route::get('/create', [SiteController::class, 'site_create'])->name('create')->middleware('auth');
+Route::get('/update', [SiteController::class, 'site_update'])->name('update')->middleware('auth');
 Route::post('/site/store', [SiteController::class, 'store'])->name('site.store')->middleware('auth');
 Route::put('/site/update/{id}', [SiteController::class, 'update'])->name('site.update')->middleware('auth');
 Route::delete('/site/delete/{id}', [SiteController::class, 'delete'])->name('site.delete')->middleware('auth');

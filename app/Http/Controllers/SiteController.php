@@ -58,6 +58,13 @@ class SiteController extends Controller
     {
         return View('creat_site', ['categorier' => categorier::all()]);
     }
+    function site_update(Site $site)
+    {
+        return View('update_site', [
+            'site'=>$site,
+            'categorier' => categorier::all()
+        ]);
+    }
     function update(SiteRequest $request, Site $site)
     {
         $site->lien = $request->lien;
